@@ -2,12 +2,13 @@
   "name": "image-editor",
   "version": "0.0.1",
   "description": "An image editor",
-  "main": "main.js",
+  "main": "src/main.js",
   "author": "ernestchu",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "compile-addon": "cmake-js compile -O build.nosync"
+    "compile-back-end": "cmake-js compile -O build.nosync",
+    "clean-back-end": "cmake-js clean -O build.nosync"
   },
   "cmake-js": {
     "runtime": "electron",
