@@ -1,0 +1,24 @@
+{
+  "name": "image-editor",
+  "version": "0.0.1",
+  "description": "An image editor",
+  "main": "main.js",
+  "author": "ernestchu",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "compile-addon": "cmake-js compile -O build.nosync"
+  },
+  "cmake-js": {
+    "runtime": "electron",
+    "runtimeVersion": "15.3.0",
+    "arch": "x64"
+  },
+  "devDependencies": {
+    "cmake-js": "^6.2.1",
+    "electron": "^15.3.0"
+  },
+  "dependencies": {
+    "node-addon-api": "^4.2.0"
+  }
+}

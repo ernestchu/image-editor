@@ -1,0 +1,5 @@
+.DS_Store
+compile_commands.json
+build.nosync
+build
+node_modules*
