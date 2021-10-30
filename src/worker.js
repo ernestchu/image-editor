@@ -1,5 +1,5 @@
-var addon = require('../build.nosync/Release/image-editor.node')
-const result = addon.hello()
+const backEnd = require('../build.nosync/Release/image-editor.node')
+const result = backEnd.title()
 
 console.log(result)
 

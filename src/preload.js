@@ -1,3 +1,9 @@
+const { contextBridge, ipcRenderer } = require('electron')
+
+contextBridge.exposeInMainWorld('file', {
+  open: () => ipcRenderer.invoke('file:open')
+})
+
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
     const element = document.getElementById(selector)
@@ -8,17 +14,4 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${dependency}-version`, process.versions[dependency])
   }
 
-  var worker = new Worker('./worker.js')
-
-  worker.onmessage = event => {
-    console.log('worker: ', event.data)
-    document.querySelector('h1').innerHTML = event.data
-
-    worker.terminate()
-    worker = undefined
-  }
-
-  worker.onerror = event => {
-    console.log(event.message, event)
-  }
 })

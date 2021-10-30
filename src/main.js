@@ -1,5 +1,5 @@
 const path = require('path')
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -14,6 +14,22 @@ function createWindow () {
 
   win.loadFile(path.join(__dirname, 'index.html'))
   win.webContents.openDevTools()
+
+  ipcMain.handle('file:open', () => {
+    dialog.showOpenDialog( { properties: ['openFile'] })
+      .then(res => {
+        if (!res.canceled) {
+          // handle fully qualified file name
+          console.log(res.filePaths[0])
+          return res.filePaths
+        } else {
+          console.log("no file selected")
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
 }
 
 app.on('window-all-closed', () => {
