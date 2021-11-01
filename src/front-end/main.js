@@ -16,19 +16,12 @@ function createWindow () {
   win.webContents.openDevTools()
 
   ipcMain.handle('file:open', () => {
-    dialog.showOpenDialog( { properties: ['openFile'] })
-      .then(res => {
-        if (!res.canceled) {
-          // handle fully qualified file name
-          console.log(res.filePaths[0])
-          return res.filePaths
-        } else {
-          console.log("no file selected")
-        }
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    return dialog.showOpenDialogSync({
+      filters: [
+        { name: 'Images', extensions: ['pcx', 'bmp', 'jpeg'] }
+      ],
+      properties: ['openFile']
+    })
   })
 }
 

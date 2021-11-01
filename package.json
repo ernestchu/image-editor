@@ -2,7 +2,7 @@
   "name": "image-editor",
   "version": "0.0.1",
   "description": "An image editor",
-  "main": "src/main.js",
+  "main": "src/front-end/main.js",
   "author": "ernestchu",
   "license": "MIT",
   "scripts": {
