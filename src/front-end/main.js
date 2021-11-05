@@ -18,7 +18,7 @@ function createWindow () {
   ipcMain.handle('file:open', () => {
     return dialog.showOpenDialogSync({
       filters: [
-        { name: 'Images', extensions: ['pcx', 'bmp', 'jpeg'] }
+        { name: 'Images', extensions: ['pcx'] }
       ],
       properties: ['openFile']
     })

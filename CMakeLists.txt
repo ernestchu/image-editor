@@ -1,11 +1,13 @@
-cmake_minimum_required(VERSION 3.9)
-cmake_policy(SET CMP0042 NEW)
+cmake_minimum_required(VERSION 3.15...3.20)
+# cmake_policy(SET CMP0042 NEW)
+
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(image-editor)
 include_directories(${CMAKE_JS_INC})
-file(GLOB SOURCE_FILES "src/back-end/title.cpp")
+
+file(GLOB SOURCE_FILES "src/back-end/main.cpp" "src/back-end/src/*.cpp" "src/back-end/include/*.hpp")
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 target_link_libraries(${PROJECT_NAME} ${CMAKE_JS_LIB})

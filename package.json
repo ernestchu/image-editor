@@ -8,6 +8,7 @@
   "scripts": {
     "start": "electron .",
     "compile-back-end": "cmake-js compile -O build.nosync",
+    "configure-back-end": "cmake-js configure -O build.nosync",
     "clean-back-end": "cmake-js clean -O build.nosync"
   },
   "cmake-js": {
