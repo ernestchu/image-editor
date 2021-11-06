@@ -22,7 +22,7 @@ namespace imgedit {
 
     class ImageFile {
         public:
-            ImageFile() {};
+            ImageFile() : status(true) {};
             virtual ~ImageFile() {};
             // ImageFile(const ImageFile&) = delete;
             // ImageFile& operator= (const ImageFile&) = delete;
@@ -31,11 +31,13 @@ namespace imgedit {
             const std::vector<std::vector<uint8_t>>& getData() const { return data; }
             uint16_t getWidth() const { return width; }
             uint16_t getHeight() const { return height; }
+            bool getStatus() const { return status; }
         protected:
             virtual unsigned int getHeaderSize() = 0;
 
             std::vector<std::vector<uint8_t>> data;
             uint16_t width, height;
+            bool status;
     };
 
     class PCXImageFile : public ImageFile {

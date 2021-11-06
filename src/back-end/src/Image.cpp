@@ -20,8 +20,14 @@ Napi::Object image::imageArray(const Napi::CallbackInfo& info) {
             ifs.close();
             return Napi::Uint8Array::New(env, 0, napi_uint8_clamped_array);
     }
+
+    if (!img->getStatus()) {
+        Napi::TypeError::New(env, "Corrupted image or older version of PCX.")
+            .ThrowAsJavaScriptException();
+        return Napi::Object(env, env.Null());
+    }
     
-    auto imgData = img->getData();
+    const auto& imgData = img->getData();
     auto nodeArray = Napi::Uint8Array::New(env, 4 * imgData[0].size(), napi_uint8_clamped_array);
 
     unsigned int count = 0;
