@@ -40,6 +40,7 @@ Napi::Object image::imageArray(const Napi::CallbackInfo& info) {
     }
 
     auto obj = Napi::Object::New(env);
+    obj.Set("filename", info[0].As<Napi::String>());
     obj.Set("data",     nodeArray);
     obj.Set("width",    Napi::Number::New(env, img->getWidth()));
     obj.Set("height",   Napi::Number::New(env, img->getHeight()));

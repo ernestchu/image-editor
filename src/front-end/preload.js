@@ -1,18 +1,22 @@
 const { contextBridge, ipcRenderer } = require('electron')
+const backEnd = require('../../build.nosync/Release/image-editor.node')
+
+contextBridge.exposeInMainWorld('title', {
+  text: backEnd.title()
+})
 
 contextBridge.exposeInMainWorld('file', {
-  // open: () => ipcRenderer.invoke('file:open'),
-  open: handler => {
-    ipcRenderer.on('FILE_OPEN', (_, args) => handler(args))
-  }
+  open: handler => ipcRenderer.on('FILE_OPEN', (_, image) => handler(image))
 })
 
 contextBridge.exposeInMainWorld('view', {
-  RGBDecomposition: handler => {
-    ipcRenderer.on('RGB_DECOMP', () => handler())
-  },
-  HSIDecomposition: handler => {
-    ipcRenderer.on('HSI_DECOMP', () => handler())
+  RGBHSIDecomposition: handler => ipcRenderer.on('RGB_HSI_DECOMP', () => handler())
+})
+
+contextBridge.exposeInMainWorld('state', {
+  updateImageState: (imageURL, isOpened) => ipcRenderer.invoke('update-image-state', imageURL, isOpened),
+  getImageState: () => {
+    return ipcRenderer.invoke('get-image-state')
   }
 })
 

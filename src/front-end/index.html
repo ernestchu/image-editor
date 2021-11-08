@@ -4,26 +4,23 @@
     <title>Hello World!</title>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; img-src data: file:">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; img-src data: file:">
-    <script src="lib/vue.global.prod.js"></script>
-    <script src="lib/vuex.global.prod.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src data: file:">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src data: file:">
   </head>
   <body>
-    <div id="app">
-      <h1>Failed to import C++ back-end</h1>
-      <p>
-        Built with Node.js <span id="node-version"></span>,
-        Chromium <span id="chrome-version"></span>,
-        and Electron <span id="electron-version"></span>.
-      </p>
-      <!--<button id="open-file">Open file</button>-->
-      <p id="filename"></p>
-      <canvas id="original-image"></canvas>
-    </div>
+    <h1>Failed to import C++ back-end</h1>
+    <p>
+      Built with Node.js <span id="node-version"></span>,
+      Chromium <span id="chrome-version"></span>,
+      and Electron <span id="electron-version"></span>.
+    </p>
+    <p id="filename"></p>
+    <canvas id="original-image"></canvas>
+    <canvas id="rgb-images"></canvas>
+    <canvas id="hsi-images"></canvas>
     <!-- scripts -->
-    <script src="app.js"></script>
     <script src="scripts/open-image.js"></script>
+    <script src="scripts/rgb-hsi-decomposition.js"></script>
     <script src="renderer.js"></script>
   </body>
 </html>

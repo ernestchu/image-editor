@@ -2,6 +2,7 @@
 // https://github.com/electron/electron/blob/888ac65c72df227ed4d65d9177748d4082b13b0f/lib/browser/api/menu-item-roles.ts
 
 const { app, shell, dialog } = require('electron')
+const backEnd = require('../../../build.nosync/Release/image-editor.node')
 
 const isMac = process.platform === 'darwin'
 
@@ -52,7 +53,7 @@ module.exports = win => {
           })
           if (filename) {
             win.webContents.send(
-              'FILE_OPEN', filename[0]
+              'FILE_OPEN', backEnd.image(filename[0])
             )
           }
         }
@@ -65,8 +66,11 @@ module.exports = win => {
   const viewMenu = {
     label: 'View',
     submenu: [
-      { label: 'RGB decomposition', click: () => win.webContents.send('RGB_DECOMP') },
-      { label: 'HSI decomposition', click: () => win.webContents.send('HSI_DECOMP') },
+      {
+        label: 'RGB/HSI decomposition',
+        accelerator: 'CmdOrCtrl+D',
+        click: () => win.webContents.send('RGB_HSI_DECOMP')
+      },
       { type: 'separator' },
       { role: 'reload' },
       { role: 'forceReload' },
