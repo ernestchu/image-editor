@@ -1,6 +1,8 @@
 # Image Editor
 An image editor built with Electron and C++ back-end addon.
 
+<img width="1592" alt="screenshot" src="https://user-images.githubusercontent.com/51432514/140779445-df15e4f7-b017-4bb0-984a-679333f20d46.png">
+
 ### Usage
 For the moment, all of the functionalities can only be found in the menu bar. For example, File > Open, with the shortcut of ⌘ O or Ctrl O.
 
