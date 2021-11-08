@@ -12,6 +12,7 @@ function createWindow () {
     }
   })
   Menu.setApplicationMenu(Menu.buildFromTemplate(createMenuTemplate(win)))
+  win.webContents.setVisualZoomLevelLimits(1, 3)
 
   win.loadFile(path.join(__dirname, 'index.html'))
   win.webContents.openDevTools()

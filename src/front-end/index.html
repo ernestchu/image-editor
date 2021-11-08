@@ -6,6 +6,7 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src data: file:">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src data: file:">
+    <link rel="stylesheet" href="styles/index.css">
   </head>
   <body>
     <h1>Failed to import C++ back-end</h1>
@@ -16,8 +17,12 @@
     </p>
     <p id="filename"></p>
     <canvas id="original-image"></canvas>
-    <canvas id="rgb-images"></canvas>
-    <canvas id="hsi-images"></canvas>
+    <div class="decomposition">
+      <canvas id="rgb-images"></canvas>
+      <p id="rgb-title"></p>
+      <canvas id="hsi-images"></canvas>
+      <p id="hsi-title"></p>
+    </div>
     <!-- scripts -->
     <script src="scripts/open-image.js"></script>
     <script src="scripts/rgb-hsi-decomposition.js"></script>
