@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello World!</title>
+    <title>Image Editor</title>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src data: file:">
@@ -17,15 +17,32 @@
     </p>
     <p id="filename"></p>
     <canvas id="original-image"></canvas>
-    <div class="decomposition">
+    <div id="rgb-hsi-decomposition">
+      <h3 id="rgb-title"></h3>
       <canvas id="rgb-images"></canvas>
-      <p id="rgb-title"></p>
+      <h3 id="hsi-title"></h3>
       <canvas id="hsi-images"></canvas>
-      <p id="hsi-title"></p>
+    </div>
+    <div id="scale">
+      <h3>Interpolation mode</h3>
+      <div>
+        <input type="radio" name="scale" id="nearest-neighbor" value="nearest-neighbor" checked>
+        <label for="nearest-neighbor">Nearest-neighbor</label>
+      </div>
+      <div>
+        <input type="radio" name="scale" id="bilinear" value="bilinear">
+        <label for="bilinear">Bilinear</label>
+      </div>
+      <div>
+        <input type="radio" name="scale" id="bicubic" value="bicubic">
+        <label for="bicubic">Bicubic</label>
+      </div>
     </div>
     <!-- scripts -->
+    <script src="scripts/div-management.js"></script>
     <script src="scripts/open-image.js"></script>
     <script src="scripts/rgb-hsi-decomposition.js"></script>
+    <script src="scripts/scale.js"></script>
     <script src="renderer.js"></script>
   </body>
 </html>

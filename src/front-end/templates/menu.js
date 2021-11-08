@@ -71,6 +71,11 @@ module.exports = win => {
         accelerator: 'CmdOrCtrl+D',
         click: () => win.webContents.send('RGB_HSI_DECOMP')
       },
+      {
+        label: 'Scale',
+        accelerator: 'CmdOrCtrl+Shift+S',
+        click: () => win.webContents.send('SCALE')
+      },
       { type: 'separator' },
       { role: 'reload' },
       { role: 'forceReload' },

@@ -1,6 +1,10 @@
-div.decomposition {
-  display: inline-block;
+div#rgb-hsi-decomposition,
+div#scale
+{
+  display: none;
+  margin-left: 1rem;
 }
+
 canvas {
   vertical-align: top;
 }

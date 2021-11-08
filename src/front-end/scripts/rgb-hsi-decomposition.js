@@ -2,7 +2,10 @@ async function RGBHSIDecomposition () {
 
   // %%%%%%%%%%%%%%%%%% Restore state %%%%%%%%%%%%%%%%%%
   
-  const { imageURL } = await window.state.getImageState()
+  const { imageURL, isOpened } = await window.state.getImageState()
+  if (!isOpened) {
+    return
+  }
   
   let img
   const imageLoadPromise = new Promise(resolve => {
@@ -157,7 +160,6 @@ async function RGBHSIDecomposition () {
 
   // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  
-
+  showOnlyDiv('rgb-hsi-decomposition')
 
 }

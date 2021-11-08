@@ -5,7 +5,7 @@ require('./states.js')
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 1280,
+    width: 1480,
     height: 800,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')

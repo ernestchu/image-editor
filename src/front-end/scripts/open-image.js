@@ -1,5 +1,8 @@
+const canvasWidth = 600
 function openImage (image) {
   if (image) {
+    document.getElementById("rgb-hsi-decomposition").style.display = 'none'
+
     const { filename, data, width, height } = image;
     document.getElementById('filename').innerText = filename
     const imageData = new ImageData(data, width, height)
@@ -17,8 +20,8 @@ function openImage (image) {
     imageURL = tempCanvas.toDataURL('image/png', 1.0)
     img.src = imageURL
     img.onload = () => {
-      canvas.width = 400
-      canvas.height = img.naturalHeight / img.naturalWidth * 400
+      canvas.width = canvasWidth
+      canvas.height = img.naturalHeight / img.naturalWidth * canvasWidth
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
     }
 
