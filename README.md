@@ -4,7 +4,7 @@ An image editor built with Electron and C++ back-end addon.
 ### Roadmap
 
 - [x] Support `.pcx`, `.bmp` image format decoding.
-- [ ] RGB and HSI decomposition.
+- [x] RGB and HSI decomposition.
 - [ ] Resizing. Nearest, Bilinear, Bicubic.
 - [ ] Cropping.
 - [ ] Rotation.
