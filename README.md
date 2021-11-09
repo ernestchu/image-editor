@@ -10,7 +10,7 @@ For the moment, all of the functionalities can only be found in the menu bar. Fo
 
 - [x] Support `.pcx`, `.bmp` image format decoding.
 - [x] RGB and HSI decomposition.
-- [ ] Resizing. Nearest, Bilinear, Bicubic.
+- [x] Resizing. Nearest, Bilinear, (Bicubic).
 - [ ] Cropping.
 - [ ] Rotation.
 - [ ] Drawing. Rectangle, Triangle, Free Drawing.

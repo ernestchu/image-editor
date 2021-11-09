@@ -16,6 +16,7 @@ contextBridge.exposeInMainWorld('view', {
 
 contextBridge.exposeInMainWorld('state', {
   updateImageState: (imageURL, isOpened) => ipcRenderer.invoke('update-image-state', imageURL, isOpened),
+  updateImageScale: (scale) => ipcRenderer.invoke('update-image-scale', scale),
   getImageState: () => {
     return ipcRenderer.invoke('get-image-state')
   }

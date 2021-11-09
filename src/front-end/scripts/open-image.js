@@ -1,5 +1,5 @@
-const canvasWidth = 600
 function openImage (image) {
+  const canvasWidth = 600
   if (image) {
     document.getElementById("rgb-hsi-decomposition").style.display = 'none'
 

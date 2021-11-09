@@ -21,7 +21,7 @@ async function RGBHSIDecomposition () {
   tempCanvas.width  = img.naturalWidth
   tempCanvas.height = img.naturalHeight
   tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height)
-  imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height)
+  const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height)
 
   // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
