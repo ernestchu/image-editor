@@ -1,6 +1,6 @@
 const path = require('path')
 const { app, Menu, BrowserWindow } = require('electron')
-const createMenuTemplate = require('./templates/menu.js')
+const createMenuTemplate = require('./menu.js')
 require('./states.js')
 
 function createWindow () {

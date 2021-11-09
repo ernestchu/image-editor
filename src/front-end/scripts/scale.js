@@ -1,4 +1,4 @@
-function abs2D (x1, y1, x2, y2) {
+function dist2D (x1, y1, x2, y2) {
   return Math.sqrt(
     Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2)
   )
@@ -48,10 +48,10 @@ const interpolate = {
           const scaledFloorJ = Math.floor(j * scale)
           
           const dists = [
-            abs2D(scaledI, scaledJ, scaledFloorI, scaledFloorJ),
-            abs2D(scaledI, scaledJ, scaledFloorI, scaledCeilJ),
-            abs2D(scaledI, scaledJ, scaledCeilI , scaledFloorJ),
-            abs2D(scaledI, scaledJ, scaledFloorI, scaledFloorJ)
+            dist2D(scaledI, scaledJ, scaledFloorI, scaledFloorJ),
+            dist2D(scaledI, scaledJ, scaledFloorI, scaledCeilJ),
+            dist2D(scaledI, scaledJ, scaledCeilI , scaledFloorJ),
+            dist2D(scaledI, scaledJ, scaledFloorI, scaledFloorJ)
           ]
           let distTotal = 0
           dists.forEach(el => distTotal += el)

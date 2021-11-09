@@ -5,7 +5,8 @@ div#welcome {
 
 div#rgb-hsi-decomposition,
 div#scale,
-div#rotate
+div#rotate,
+div#draw
 {
   display: none;
   margin-left: 1rem;
@@ -16,5 +17,6 @@ input#rotate-deg {
 }
 
 canvas {
+  border: .0625rem solid #a0a0a2;
   vertical-align: top;
 }

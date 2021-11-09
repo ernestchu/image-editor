@@ -13,7 +13,7 @@ For the moment, all of the functionalities can only be found in the menu bar. Fo
 - [x] Resizing. Nearest, Bilinear, (Bicubic).
 - [ ] Cropping.
 - [x] Rotation.
-- [ ] Drawing. Rectangle, Triangle, Free Drawing.
+- [x] Drawing. Rectangle, Triangle, Free Drawing.
 - [ ] Composition. Premultiplied alpha.
 - [ ] 2D Elastic collision simulation.
 

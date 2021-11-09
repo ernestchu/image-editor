@@ -2,7 +2,7 @@
 // https://github.com/electron/electron/blob/888ac65c72df227ed4d65d9177748d4082b13b0f/lib/browser/api/menu-item-roles.ts
 
 const { app, shell, dialog } = require('electron')
-const backEnd = require('../../../build.nosync/Release/image-editor.node')
+const backEnd = require('../../build.nosync/Release/image-editor.node')
 
 const isMac = process.platform === 'darwin'
 
@@ -63,6 +63,45 @@ module.exports = win => {
     ]
   }
 
+  const editMenu = {
+    label: 'Edit',
+    submenu: [
+      { role: 'undo' },
+      { role: 'redo' },
+      { type: 'separator' },
+      {
+        label: 'Draw',
+        submenu: [
+          { label: 'Rectangle', click: () => win.webContents.send('DRAW_RECT') },
+          { label: 'Circle',    click: () => win.webContents.send('DRAW_CIRC') },
+          { label: 'Line',      click: () => win.webContents.send('DRAW_LINE') },
+          { label: 'Free',      click: () => win.webContents.send('DRAW_FREE') }
+        ]
+      },
+      { type: 'separator' },
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' },
+      ...(isMac ? [
+        { role: 'pasteAndMatchStyle' },
+        { role: 'delete' },
+        { role: 'selectAll' },
+        { type: 'separator' },
+        {
+          label: 'Speech',
+          submenu: [
+            { role: 'startSpeaking' },
+            { role: 'stopSpeaking' }
+          ]
+        }
+      ] : [
+        { role: 'delete' },
+        { type: 'separator' },
+        { role: 'selectAll' }
+      ])
+    ]
+  }
+
   const viewMenu = {
     label: 'View',
     submenu: [
@@ -98,7 +137,7 @@ module.exports = win => {
   const template = [
     ...(isMac ? [macAppMenu] : []),
     ...(!!fileMenu ? [fileMenu] : [{ role: 'fileMenu' }]),
-    { role: 'editMenu' },
+    ...(!!editMenu ? [editMenu] : [{ role: 'editMenu' }]),
     ...(!!viewMenu ? [viewMenu] : [{ role: 'viewMenu' }]),
     { role: 'windowMenu' },
     helpMenu

@@ -16,7 +16,7 @@
       and Electron <span id="electron-version"></span>.
     </p>
     <p id="filename"></p>
-    <canvas id="original-image"></canvas>
+    <canvas id="original-image" width="600" height="600"></canvas>
     <div id="welcome">
       <h2>Welcome!</h2>
       <p>Lists of functionality</p>
@@ -57,12 +57,19 @@
       <input id="rotate-deg" type="range" max="180" min="-180" value="0">
       <span id="rotate-deg-indicator"></span>
     </div>
+    <div id="draw">
+      <h2>Draw</h2>
+    </div>
     <!-- scripts -->
     <script src="scripts/div-management.js"></script>
     <script src="scripts/open-image.js"></script>
     <script src="scripts/rgb-hsi-decomposition.js"></script>
     <script src="scripts/scale.js"></script>
     <script src="scripts/rotate.js"></script>
+    <script src="scripts/draw/rect.js"></script>
+    <script src="scripts/draw/circ.js"></script>
+    <script src="scripts/draw/line.js"></script>
+    <script src="scripts/draw/free.js"></script>
     <script src="renderer.js"></script>
   </body>
 </html>

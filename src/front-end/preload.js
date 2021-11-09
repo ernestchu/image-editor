@@ -9,10 +9,17 @@ contextBridge.exposeInMainWorld('file', {
   open: handler => ipcRenderer.on('FILE_OPEN', (_, image) => handler(image))
 })
 
+contextBridge.exposeInMainWorld('edit', {
+  drawRect: handler => ipcRenderer.on('DRAW_RECT', () => handler()),
+  drawCirc: handler => ipcRenderer.on('DRAW_CIRC', () => handler()),
+  drawLine: handler => ipcRenderer.on('DRAW_LINE', () => handler()),
+  drawFree: handler => ipcRenderer.on('DRAW_FREE', () => handler())
+})
+
 contextBridge.exposeInMainWorld('view', {
   RGBHSIDecomposition: handler => ipcRenderer.on('RGB_HSI_DECOMP', () => handler()),
-  Scale: handler => ipcRenderer.on('SCALE', () => handler()),
-  Rotate: handler => ipcRenderer.on('ROTATE', () => handler())
+  scale: handler => ipcRenderer.on('SCALE', () => handler()),
+  rotate: handler => ipcRenderer.on('ROTATE', () => handler())
 })
 
 contextBridge.exposeInMainWorld('state', {
