@@ -1,6 +1,8 @@
 const divs = [
+  'welcome',
   'rgb-hsi-decomposition',
-  'scale'
+  'scale',
+  'rotate'
 ]
 
 function showOnlyDiv (id) {

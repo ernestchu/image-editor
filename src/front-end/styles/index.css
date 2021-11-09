@@ -1,8 +1,18 @@
+div#welcome {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
 div#rgb-hsi-decomposition,
-div#scale
+div#scale,
+div#rotate
 {
   display: none;
   margin-left: 1rem;
+}
+
+input#rotate-deg {
+  width: 30rem;
 }
 
 canvas {

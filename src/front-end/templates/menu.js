@@ -76,9 +76,14 @@ module.exports = win => {
         accelerator: 'CmdOrCtrl+Shift+S',
         click: () => win.webContents.send('SCALE')
       },
+      {
+        label: 'Rotate',
+        accelerator: 'CmdOrCtrl+Shift+R',
+        click: () => win.webContents.send('ROTATE')
+      },
       { type: 'separator' },
       { role: 'reload' },
-      { role: 'forceReload' },
+      // { role: 'forceReload' },
       { role: 'toggleDevTools' },
       { type: 'separator' },
       { role: 'resetZoom' },

@@ -11,7 +11,8 @@ contextBridge.exposeInMainWorld('file', {
 
 contextBridge.exposeInMainWorld('view', {
   RGBHSIDecomposition: handler => ipcRenderer.on('RGB_HSI_DECOMP', () => handler()),
-  Scale: handler => ipcRenderer.on('SCALE', () => handler())
+  Scale: handler => ipcRenderer.on('SCALE', () => handler()),
+  Rotate: handler => ipcRenderer.on('ROTATE', () => handler())
 })
 
 contextBridge.exposeInMainWorld('state', {

@@ -12,7 +12,7 @@ For the moment, all of the functionalities can only be found in the menu bar. Fo
 - [x] RGB and HSI decomposition.
 - [x] Resizing. Nearest, Bilinear, (Bicubic).
 - [ ] Cropping.
-- [ ] Rotation.
+- [x] Rotation.
 - [ ] Drawing. Rectangle, Triangle, Free Drawing.
 - [ ] Composition. Premultiplied alpha.
 - [ ] 2D Elastic collision simulation.

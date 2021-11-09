@@ -17,6 +17,16 @@
     </p>
     <p id="filename"></p>
     <canvas id="original-image"></canvas>
+    <div id="welcome">
+      <h2>Welcome!</h2>
+      <p>Lists of functionality</p>
+      <ul>
+        <li>⌘/Ctrl + O: Open image.</li>
+        <li>⌘/Ctrl + D: RGB, HSI Decomposition.</li>
+        <li>⌘/Ctrl + Shift + S: Scale.</li>
+        <li>⌘/Ctrl + Shift + R: Rotate.</li>
+      </ul>
+    </div>
     <div id="rgb-hsi-decomposition">
       <h3 id="rgb-title"></h3>
       <canvas id="rgb-images"></canvas>
@@ -24,7 +34,9 @@
       <canvas id="hsi-images"></canvas>
     </div>
     <div id="scale">
+      <h2>Scale</h2>
       <h3>Interpolation mode</h3>
+      <p>Scroll on the image to scale</p>
       <div>
         <input type="radio" name="scale" id="nearest-neighbor" value="nearest-neighbor" checked>
         <label for="nearest-neighbor">Nearest-neighbor</label>
@@ -38,11 +50,19 @@
         <label for="bicubic">Bicubic</label>
       </div>
     </div>
+    <div id="rotate">
+      <h2>Rotate</h2>
+      <label for="rotate-deg">Degree</label>
+      <br>
+      <input id="rotate-deg" type="range" max="180" min="-180" value="0">
+      <span id="rotate-deg-indicator"></span>
+    </div>
     <!-- scripts -->
     <script src="scripts/div-management.js"></script>
     <script src="scripts/open-image.js"></script>
     <script src="scripts/rgb-hsi-decomposition.js"></script>
     <script src="scripts/scale.js"></script>
+    <script src="scripts/rotate.js"></script>
     <script src="renderer.js"></script>
   </body>
 </html>
