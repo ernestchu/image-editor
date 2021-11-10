@@ -1,8 +1,9 @@
 const { contextBridge, ipcRenderer } = require('electron')
 const backEnd = require('../../build.nosync/Release/image-editor.node')
 
-contextBridge.exposeInMainWorld('title', {
-  text: backEnd.title()
+contextBridge.exposeInMainWorld('main', {
+  text: backEnd.title(),
+  showErrorBox: (title, content) => ipcRenderer.invoke('show-error-box', title, content)
 })
 
 contextBridge.exposeInMainWorld('file', {
@@ -10,6 +11,7 @@ contextBridge.exposeInMainWorld('file', {
 })
 
 contextBridge.exposeInMainWorld('edit', {
+  composition: handler => ipcRenderer.on('COMP', (_, image) => handler(image)),
   drawRect: handler => ipcRenderer.on('DRAW_RECT', () => handler()),
   drawCirc: handler => ipcRenderer.on('DRAW_CIRC', () => handler()),
   drawLine: handler => ipcRenderer.on('DRAW_LINE', () => handler()),

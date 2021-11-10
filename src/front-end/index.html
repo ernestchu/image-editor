@@ -25,6 +25,17 @@
         <li>⌘/Ctrl + D: RGB, HSI Decomposition.</li>
         <li>⌘/Ctrl + Shift + S: Scale.</li>
         <li>⌘/Ctrl + Shift + R: Rotate.</li>
+        <li>⌘/Ctrl + Shift + C: Composition.</li>
+      </ul>
+      <p>Functionalities without an image opened</p>
+      <ul>
+        <li>Draw</li>
+        <ul>
+          <li>Rectangle</li>
+          <li>Circle</li>
+          <li>Line</li>
+          <li>Free drawing</li>
+        </ul>
       </ul>
     </div>
     <div id="rgb-hsi-decomposition">
@@ -60,6 +71,18 @@
     <div id="draw">
       <h2>Draw</h2>
     </div>
+    <div id="composition">
+      <h2>Composition</h2>
+      <div>
+        <input type="radio" name="composition-mode" id="non-premultiplied" value="non-premultiplied" checked>
+        <label for="non-premultiplied">Non-premultiplied</label>
+      </div>
+      <div>
+        <input type="radio" name="composition-mode" id="premultiplied" value="premultiplied">
+        <label for="premultiplied">Premultiplied</label>
+      </div>
+      <input id="composition-alpha" type="range" max="1" min="0" value="0.5" step="0.1">
+    </div>
     <!-- scripts -->
     <script src="scripts/div-management.js"></script>
     <script src="scripts/open-image.js"></script>
@@ -70,6 +93,7 @@
     <script src="scripts/draw/circ.js"></script>
     <script src="scripts/draw/line.js"></script>
     <script src="scripts/draw/free.js"></script>
+    <script src="scripts/composition.js"></script>
     <script src="renderer.js"></script>
   </body>
 </html>

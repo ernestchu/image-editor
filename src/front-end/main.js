@@ -1,5 +1,5 @@
 const path = require('path')
-const { app, Menu, BrowserWindow } = require('electron')
+const { app, Menu, BrowserWindow, dialog, ipcMain } = require('electron')
 const createMenuTemplate = require('./menu.js')
 require('./states.js')
 
@@ -18,10 +18,17 @@ function createWindow () {
   win.webContents.openDevTools()
 }
 
+function registerIPCHandlers () {
+  ipcMain.handle('show-error-box', (_, ...args) => {
+    dialog.showErrorBox(...args)
+  })
+}
+
 app.on('window-all-closed', () => {
   app.quit()
 })
 
 app.whenReady().then(() => {
   createWindow()
+  registerIPCHandlers()
 })

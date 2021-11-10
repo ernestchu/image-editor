@@ -1,5 +1,5 @@
 // %%%%%%%%%%%% Validating C++ back-end %%%%%%%%%%%%
-document.querySelector('h1').innerHTML = window.title.text
+document.querySelector('h1').innerHTML = window.main.text
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 // menu item listener registration
@@ -11,4 +11,5 @@ window.edit.drawRect(drawRect)
 window.edit.drawCirc(drawCirc)
 window.edit.drawLine(drawLine)
 window.edit.drawFree(drawFree)
+window.edit.composition(image => composition(image))
 

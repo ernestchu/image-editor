@@ -3,6 +3,7 @@
 
 const { app, shell, dialog } = require('electron')
 const backEnd = require('../../build.nosync/Release/image-editor.node')
+const store = require('./states.js')
 
 const isMac = process.platform === 'darwin'
 
@@ -69,6 +70,28 @@ module.exports = win => {
       { role: 'undo' },
       { role: 'redo' },
       { type: 'separator' },
+      {
+        label: 'Composition',
+        accelerator: 'CmdOrCtrl+Shift+C',
+        click: () => {
+          const { isOpened } = store.getState()
+          if (isOpened) {
+            const filename = dialog.showOpenDialogSync({
+              filters: [
+                { name: 'Images', extensions: ['pcx'] }
+              ],
+              properties: ['openFile']
+            })
+            if (filename) {
+              win.webContents.send(
+                'COMP', backEnd.image(filename[0])
+              )
+            }
+          } else {
+            dialog.showErrorBox('Error', 'You must open an image first to use this functionality.')
+          }
+        }
+      },
       {
         label: 'Draw',
         submenu: [

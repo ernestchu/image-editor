@@ -6,13 +6,16 @@ div#welcome {
 div#rgb-hsi-decomposition,
 div#scale,
 div#rotate,
-div#draw
+div#draw,
+div#composition
 {
   display: none;
   margin-left: 1rem;
 }
 
-input#rotate-deg {
+input#rotate-deg,
+input#composition-alpha
+{
   width: 30rem;
 }
 

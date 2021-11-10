@@ -4,6 +4,7 @@ async function RGBHSIDecomposition () {
   
   const { imageURL, isOpened } = await window.state.getImageState()
   if (!isOpened) {
+    window.main.showErrorBox('Error', 'You must open an image first to use this functionality.')
     return
   }
   

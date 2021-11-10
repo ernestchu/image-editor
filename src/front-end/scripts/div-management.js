@@ -3,7 +3,8 @@ const divs = [
   'rgb-hsi-decomposition',
   'scale',
   'rotate',
-  'draw'
+  'draw',
+  'composition'
 ]
 
 function showOnlyDiv (id) {

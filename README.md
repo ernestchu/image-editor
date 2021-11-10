@@ -14,7 +14,7 @@ For the moment, all of the functionalities can only be found in the menu bar. Fo
 - [ ] Cropping.
 - [x] Rotation.
 - [x] Drawing. Rectangle, Triangle, Free Drawing.
-- [ ] Composition. Premultiplied alpha.
+- [x] Composition. Premultiplied alpha.
 - [ ] 2D Elastic collision simulation.
 
 ### Development
