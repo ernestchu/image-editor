@@ -1,4 +1,4 @@
-#include "../include/Title.hpp"
+#include <Title.hpp>
 
 std::string title::title() {
     return "Image Editor";

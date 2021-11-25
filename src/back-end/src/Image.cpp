@@ -1,4 +1,4 @@
-#include "../include/Image.hpp"
+#include <Image.hpp>
 
 Napi::Object image::imageArray(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
@@ -49,6 +49,6 @@ Napi::Object image::imageArray(const Napi::CallbackInfo& info) {
 }
 
 Napi::Object image::Init(Napi::Env env, Napi::Object exports) {
-  exports.Set("image", Napi::Function::New(env, image::imageArray));
-  return exports;
+    exports.Set("image", Napi::Function::New(env, image::imageArray));
+    return exports;
 }

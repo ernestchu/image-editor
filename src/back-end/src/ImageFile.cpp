@@ -1,4 +1,4 @@
-#include "../include/ImageFile.hpp"
+#include <ImageFile.hpp>
 
 imgedit::PCXImageFile::PCXImageFile(std::string filename) {
     auto ifs = std::ifstream(filename);

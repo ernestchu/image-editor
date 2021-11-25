@@ -38,3 +38,10 @@ or
 
 npm run start 
 ```
+
+### Note
+- Header, palette has to be shown
+- Rotation:
+  - the entire rotated image must be shown 
+  - forward and backward
+- Different level of greyscale, 1, 2, 4, 8 bit
